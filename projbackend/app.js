@@ -19,7 +19,7 @@ app.use(cors())
 
 // ROUTES
 app.use("/api", authRoutes);
-app.use("/api",userRoutes)
+app.use("/api", userRoutes)
 
 // DB CONNECTION
 mongoose.connect(process.env.MONGO_CONNECTION_STRING, {useNewUrlParser: true, useUnifiedTopology: true })

@@ -1,7 +1,12 @@
-const express = require("express")
-const User = require("../models/user");
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
+const userController = require("../controllers/user");
+const authController = require("../controllers/auth");
+
+// defining something like middleware
+// whenever userId is passed 
+router.param("userId", userController.getUserById);
+router.get("/user/:userId",authController.isSignedIn,authController.isAuthenticated,userController.getUser);
 
 
-
-exports.module = router;
+module.exports = router;
