@@ -1,0 +1,4 @@
+testback/
+testfront/
+node_modules
+.env
